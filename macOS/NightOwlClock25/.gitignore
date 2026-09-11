@@ -1,0 +1,17 @@
+.DS_Store
+DerivedData*/
+build/
+dist/
+xcuserdata/
+*.xcuserstate
+*.xcresult
+*.log
+.env*
+credentials.json
+*.p12
+*.p8
+*.pem
+*.key
+*.cer
+*.mobileprovision
+*.provisionprofile
