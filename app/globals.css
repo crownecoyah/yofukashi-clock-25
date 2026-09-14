@@ -63,3 +63,10 @@ footer p { font-size:10px; color:var(--muted); margin-top:15px; }
 @media (max-width:800px) { .wrap { width:calc(100% - 40px); } nav { gap:16px; } nav a:first-child { display:none; } .hero { gap:30px; padding-block:60px; } .time-example { padding:25px; } .features { gap:24px; } .settings-grid { gap:35px; } }
 @media (max-width:600px) { .site-header { padding-block:20px; } .brand { font-size:14px; gap:8px; } .brand img { width:32px; } nav { font-size:11px; } nav a:nth-child(2) { display:none; } .hero { grid-template-columns:1fr; gap:42px; padding-block:48px 65px; } h1 { font-size:36px; } .hero-copy { text-align:center; } .eyebrow { font-size:10px; } .intro { font-size:14px; } .time-example { max-width:390px; width:100%; margin:auto; transform:rotate(-1deg); padding:30px; } .large-time { font-size:78px; } .story { padding-block:55px; } .features { grid-template-columns:1fr; gap:22px; margin-top:35px; } .features article { border-top:1px solid #dcded4; padding-top:20px; } .features p { margin-bottom:0; } .settings-grid { grid-template-columns:1fr; padding-block:45px; gap:35px; } .settings-image { order:2; } .settings-image img { max-width:330px; width:100%; } .download-section { padding-block:60px; } .download-actions { flex-direction:column; align-items:stretch; } .release-notice { padding:20px; } footer { flex-direction:column; } .mobile-break { display:inline; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+
+.ios-recruit { margin-top:32px; padding:30px 36px; background:#e4eedb; border:2px solid #648253; border-radius:16px; box-shadow:0 8px 24px #203c320d; }
+.ios-recruit .eyebrow { margin-bottom:10px; }
+.ios-recruit h2 { font-size:clamp(22px,2.6vw,30px); margin-bottom:14px; line-height:1.6; }
+.ios-recruit p:not(.eyebrow) { font-size:14px; line-height:1.9; margin:10px 0; }
+.ios-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+@media(max-width:600px) { .ios-recruit { padding:24px 20px; margin-top:22px; } .ios-actions { flex-direction:column; } }

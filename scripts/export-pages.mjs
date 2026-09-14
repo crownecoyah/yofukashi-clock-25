@@ -34,3 +34,6 @@ await writeFile(resolve(output, '.nojekyll'), '');
 await copyFile(resolve(root, 'public/og.png'), resolve(output, 'og.png'));
 await copyFile(resolve(root, 'LICENSE.txt'), resolve(output, 'LICENSE.txt'));
 console.log(`Exported static GitHub Pages site: docs/ (${local.size} local assets)`);
+
+// Keep the standalone development plan in every GitHub Pages export.
+await copyFile(resolve(root, 'public/ios-port.html'), resolve(output, 'ios-port.html'));

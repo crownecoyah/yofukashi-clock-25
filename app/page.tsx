@@ -12,6 +12,14 @@ export default function Home() {
         <nav aria-label="メインナビゲーション"><a href="#features">できること</a><a href="#download">ダウンロード</a><a href={repository}>GitHub ↗</a></nav>
       </header>
       <main id="main">
+        <section className="ios-recruit wrap" aria-labelledby="ios-recruit-title">
+          <p className="eyebrow">iOS版 開発協力者募集</p>
+          <h2 id="ios-recruit-title">iOS版を一緒に作ってくださる方を探しています！</h2>
+          <p>macOS版はSwift／SwiftUIで実装済み。25時記法の変換ロジックとテストがあり、MIT Licenseで利用・改変できます。</p>
+          <p><strong>最初から全機能を完成させる必要はありません。</strong>設計相談、一部分だけの参加、設計提案やコードレビューも歓迎します。</p>
+          <p>仕様説明、テスト、フィードバックはプロジェクト側が担当。貢献者はご本人の希望を確認し、iOS版開発者としてREADMEとサイトに掲載します。</p>
+          <div className="ios-actions"><a className="button primary" href="./ios-port.html">iOS版の開発計画を見る</a><a className="button secondary" href="https://github.com/crownecoyah/yofukashi-clock-25/issues/1">GitHubで相談する</a></div>
+        </section>
         <section className="hero wrap">
           <div className="hero-copy">
             <p className="eyebrow">YOUR DAY, AT YOUR OWN PACE</p>
