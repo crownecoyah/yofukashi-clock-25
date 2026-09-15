@@ -46,6 +46,14 @@ export default function Home() {
             <article><span className="feature-number">03</span><h3>いつものデスクトップに。</h3><p>フォントやサイズ、最前面表示をあなた好みに。すべてのデスクトップで時計を表示できます。</p></article>
           </div>
         </section>
+        <section className="story wrap" id="main-screen">
+          <p className="eyebrow">MAIN WINDOW</p>
+          <h2>時計も予定も、ひとつの画面で。</h2>
+          <figure style={{ margin: "0 auto", maxWidth: 560 }}>
+            <img src="/images/main-window.png" alt="アナログ時計、25時記法のデジタル時計、架空のサンプル予定を表示したメイン画面" width="733" height="1151" loading="lazy" style={{ width: "100%", height: "auto" }} />
+            <figcaption style={{ fontSize: 12, lineHeight: 1.8, color: "var(--muted)", textAlign: "center", marginTop: 16 }}>メイン画面。表示されている予定名と日時は、公開用の架空サンプルです。</figcaption>
+          </figure>
+        </section>
         <section className="settings-section">
           <div className="settings-grid wrap">
             <div className="settings-image"><img src="/images/settings-window.png" alt="一日の境界、秒表示、フォント、最前面表示などを選べる設定画面" width="1000" height="1086" loading="lazy" /></div>
