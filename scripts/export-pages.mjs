@@ -37,3 +37,6 @@ console.log(`Exported static GitHub Pages site: docs/ (${local.size} local asset
 
 // Keep the standalone development plan in every GitHub Pages export.
 await copyFile(resolve(root, 'public/ios-port.html'), resolve(output, 'ios-port.html'));
+
+// Shared palette for the standalone iOS page.
+await copyFile(resolve(root, 'public/theme.css'), resolve(output, 'theme.css'));

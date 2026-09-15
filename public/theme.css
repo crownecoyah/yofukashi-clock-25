@@ -1,0 +1,23 @@
+/* Shared night palette for the landing page and iOS development plan. */
+:root {
+  color-scheme: dark;
+  --background: #090E1A;
+  --surface: #121A2A;
+  --card: #192338;
+  --foreground: #F3F5FA;
+  --muted: #AEB8CC;
+  --border: #2B3852;
+  --accent: #F2C94C;
+  --accent-hover: #F7D879;
+  --on-accent: #090E1A;
+  --link: #7D9BE8;
+  --link-hover: #B8CCFF;
+  --link-visited: #B2A4DF;
+  --focus: #F2C94C;
+  --shadow: #03071166;
+}
+a { color: var(--link); text-decoration: underline; text-underline-offset: 5px; }
+a:visited { color: var(--link-visited); }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; border-radius: 3px; }
+::selection { background: var(--accent); color: var(--on-accent); }
