@@ -1,0 +1,52 @@
+/* Windows keeps the shared geometry, with a quieter blue-green night palette. */
+.windows-page {
+  --background:#09131f;
+  --surface:#101f2e;
+  --card:#162a3b;
+  --foreground:#f0f6fa;
+  --muted:#b2c4d1;
+  --border:#304b60;
+  --accent:#82cbd0;
+  --accent-hover:#a7e0e2;
+  --on-accent:#09131f;
+  --link:#96c4f0;
+  --link-hover:#c5e4ff;
+  --link-visited:#b6c9ec;
+  --focus:#a7e0e2;
+  --shadow:#02091266;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+.windows-page figure { margin:0; }
+.windows-page .platform-label { margin:0 0 25px; font-size:14px; font-weight:650; }
+.platform-label span { display:inline-block; margin-left:8px; padding:4px 10px; border:1px solid var(--border); border-radius:5px; color:var(--accent); background:var(--surface); }
+.windows-page .hero { padding-block:62px 78px; }
+.windows-page .time-example { transform:none; border-radius:14px; border-top:3px solid var(--accent); }
+.windows-page .example-label { display:flex; justify-content:space-between; gap:12px; }
+.windows-page .example-label span { color:var(--muted); font-size:11px; }
+.source-link { font-size:13px; margin-top:20px; }
+.windows-main { text-align:center; }
+.windows-page .main-figure { max-width:480px; margin:35px auto 0; }
+.windows-page figcaption { margin-top:16px; font-size:12px; line-height:1.9; color:var(--muted); text-align:center; }
+.windows-page .settings-image img { width:420px; }
+.windows-page .settings-image { max-width:460px; margin:auto; }
+.windows-page .explanation { max-width:760px; }
+.feature-note { font-size:13px; line-height:1.9; color:var(--muted); margin:26px 0 0; }
+.install-steps { padding-left:1.5em; color:var(--foreground); font-size:13px; line-height:2; }
+.install-steps li { margin-block:8px; }
+.windows-page code { font-size:inherit; overflow-wrap:anywhere; }
+.sister-page { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding:32px; margin-bottom:60px; border:1px solid var(--border); background:var(--surface); border-radius:14px; }
+.sister-page .eyebrow { margin-bottom:12px; }
+.sister-page h2 { font-size:22px; margin-bottom:8px; }
+.sister-page p:not(.eyebrow) { font-size:13px; color:var(--muted); margin:0; }
+.windows-page .button { max-width:100%; }
+.windows-page .settings-image a, .windows-page .main-figure a { display:block; border-radius:18px; }
+@media(max-width:600px) {
+  .windows-page .hero { padding-block:35px 55px; }
+  .windows-page .time-example { padding:25px; }
+  .windows-page .large-time { font-size:clamp(60px,18vw,78px); }
+  .windows-page .time-caption { flex-wrap:wrap; }
+  .windows-page .settings-image img { max-width:100%; }
+  .sister-page { padding:24px; }
+  .sister-page .button { width:100%; }
+}

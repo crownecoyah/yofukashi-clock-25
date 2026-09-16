@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { copyFile, mkdir, writeFile } from 'node:fs/promises';
+import { copyFile, cp, mkdir, writeFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import worker from '../dist/server/index.js';
 
@@ -40,3 +40,13 @@ await copyFile(resolve(root, 'public/ios-port.html'), resolve(output, 'ios-port.
 
 // Shared palette for the standalone iOS page.
 await copyFile(resolve(root, 'public/theme.css'), resolve(output, 'theme.css'));
+
+// Windows is a standalone sibling page, like ios-port.html. Preserve real
+// distribution filenames and copy its assets on every GitHub Pages export.
+for (const name of ['windows.html', 'windows.css', 'landing.css']) {
+  await copyFile(resolve(root, 'public', name), resolve(output, name));
+}
+for (const name of ['main_window_win.jpg', 'setting_window_win.jpg']) {
+  await copyFile(resolve(root, 'public/images', name), resolve(output, 'images', name));
+}
+await cp(resolve(root, 'public/downloads'), resolve(output, 'downloads'), { recursive: true });

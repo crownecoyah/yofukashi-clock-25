@@ -11,6 +11,10 @@ export default function Home() {
         <a className="brand" href="#main"><img src="/images/app-icon.png" width="40" height="40" alt="" />夜ふかし時計25時</a>
         <nav aria-label="メインナビゲーション"><a href="#features">できること</a><a href="#download">ダウンロード</a><a href={repository}>GitHub ↗</a></nav>
       </header>
+      <div className="os-switch wrap" role="navigation" aria-label="OS版の切り替え">
+        <div className="os-tabs"><span aria-current="page">Mac版（表示中）</span><a href="./windows.html">Windows版</a></div>
+        <p><a href="./windows.html">Windows版はこちら →</a></p>
+      </div>
       <main id="main">
         <section className="ios-recruit wrap" aria-labelledby="ios-recruit-title">
           <p className="eyebrow">iOS版 開発協力者募集</p>

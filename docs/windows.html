@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>夜ふかし時計25時 Windows版 — 0時を過ぎても、今日の続き。</title>
+  <meta name="description" content="24時、25時、26時。深夜を今日の続きとして表示するWindows用の時計・予定管理アプリ。一日の境界、フォント、最前面表示をあなた好みに。実行版・ソースコードを公開しています。">
+  <link rel="canonical" href="https://crownecoyah.github.io/yofukashi-clock-25/windows.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="夜ふかし時計25時 Windows版 — 0時を過ぎても、今日の続き。">
+  <meta property="og:description" content="あなたの一日の区切りに寄り添う、Windowsのための時計と予定管理。実行版・ソースコードを公開中。">
+  <meta property="og:url" content="https://crownecoyah.github.io/yofukashi-clock-25/windows.html">
+  <meta property="og:image" content="https://crownecoyah.github.io/yofukashi-clock-25/og.png">
+  <meta property="og:image:alt" content="夜ふかし時計25時 — 0時を過ぎても、今日の続き。">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="夜ふかし時計25時 Windows版 — 0時を過ぎても、今日の続き。">
+  <meta name="twitter:description" content="深夜を今日の続きとして表示する、Windowsのための時計と予定管理。">
+  <meta name="twitter:image" content="https://crownecoyah.github.io/yofukashi-clock-25/og.png">
+  <link rel="icon" href="./images/app-icon.png">
+  <link rel="stylesheet" href="./theme.css">
+  <link rel="stylesheet" href="./landing.css">
+  <link rel="stylesheet" href="./windows.css">
+</head>
+<body class="windows-page">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#main"><img src="./images/app-icon.png" width="40" height="40" alt="">夜ふかし時計25時</a>
+    <nav aria-label="メインナビゲーション"><a href="#features">できること</a><a href="#download">ダウンロード</a><a href="https://github.com/crownecoyah/yofukashi-clock-25">GitHub ↗</a></nav>
+  </header>
+  <div class="os-switch wrap" role="navigation" aria-label="OS版の切り替え">
+    <div class="os-tabs"><a href="./index.html">Mac版</a><span aria-current="page">Windows版（表示中）</span></div>
+    <p><a href="./index.html">Mac版はこちら →</a></p>
+  </div>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="platform-label">夜ふかし時計25時 <span>Windows版</span></p>
+        <p class="eyebrow">YOUR DAY, AT YOUR OWN PACE</p>
+        <h1 id="hero-title">0時を過ぎても、<br>まだ<span>今日の続き。</span></h1>
+        <p class="intro">夜の続きを、25時で。<br>あなたの一日の区切りに寄り添う、<br>Windowsのための時計と予定管理。</p>
+        <a class="button primary" href="./downloads/NightOwlClock25_Windows.zip" download>Windows版をダウンロード <span aria-hidden="true">↓</span></a>
+        <p class="download-meta">64ビット（x64）Windows用 · ZIP形式 · MIT License</p>
+        <p class="source-link"><a href="./downloads/NightOwlClock25_Windows_Source.zip" download>ソースコードをダウンロード</a></p>
+      </div>
+      <div class="time-example" aria-label="5時まで今日の場合、2027年7月8日午前1時25分を、2027年7月7日25時25分として表示">
+        <p class="example-label">5時まで今日 <span>表示例</span></p>
+        <p class="logical-date">生活日付：2027年7月7日</p>
+        <p class="large-time">25<span>:</span>25</p>
+        <div class="time-caption"><span>実際の日時</span><span>2027年7月8日 01:25</span></div>
+        <p class="boundary-caption">午前5時になると、当日の日付に切り替わります。</p>
+      </div>
+    </section>
+    <section class="story wrap windows-main" id="main-screen" aria-labelledby="screen-title">
+      <p class="eyebrow">MAIN WINDOW</p>
+      <h2 id="screen-title">時計も予定も、ひとつの画面で。</h2>
+      <p class="section-copy">いつものアナログ時計と、今日の続きを映すデジタル時計。<br>深夜の予定も、同じ画面で確認できます。</p>
+      <figure class="main-figure">
+        <a href="./images/main_window_win.jpg" aria-label="Windows版メイン画面のスクリーンショットを原寸で開く"><img src="./images/main_window_win.jpg" width="938" height="1300" alt="Windows版メイン画面。アナログ時計、生活日付2026年9月15日、25:30:12のデジタル時計と予定の編集・削除ボタン。" fetchpriority="high"></a>
+        <figcaption>Windows版のメイン画面。25時台でも、アナログ時計は実際の1時台を示します。</figcaption>
+      </figure>
+    </section>
+    <section class="story wrap" id="features" aria-labelledby="features-title">
+      <p class="eyebrow">A LITTLE MORE OF TODAY</p>
+      <h2 id="features-title">日付よりも、<br class="mobile-break">生活のリズムに合わせて。</h2>
+      <p class="section-copy explanation">24:30、25:00、26:30。午前0時を過ぎても、指定した境界時刻までは前日の続きとして表示します。「5時まで今日」なら、午前0時から4時59分までは前日の24〜28時台。時計の下の日付も、この区切りに合わせた「生活日付」になります。</p>
+      <div class="features">
+        <article><span class="feature-number">01</span><h3>一日の終わりを、自分で。</h3><p>「X時まで今日」を0〜12時から選べます。初期値は5時。アナログ時計は実際の時刻、デジタル時計は生活日付に合わせた時刻を表示します。</p></article>
+        <article><span class="feature-number">02</span><h3>予定も、そのまま25時で。</h3><p>タイトル、開始・終了日時、メモを保存。0〜35時で入力し、25時記法のまま一覧に表示します。追加・編集・削除に対応し、予定はアプリ内で管理します。</p></article>
+        <article><span class="feature-number">03</span><h3>いつものデスクトップに。</h3><p>秒表示、フォント、文字サイズ、最前面表示をあなた好みに。ログイン時の自動起動にも対応し、ウィンドウの位置・サイズ・最大化状態を保存します。</p></article>
+      </div>
+      <p class="feature-note">予定と設定はパソコン内に保存します。外部カレンダーへの登録・連携や、予定時刻の通知・アラーム機能はありません。</p>
+    </section>
+    <section class="settings-section" aria-labelledby="settings-title">
+      <div class="settings-grid wrap">
+        <figure class="settings-image"><a href="./images/setting_window_win.jpg" aria-label="Windows版設定画面のスクリーンショットを原寸で開く"><img src="./images/setting_window_win.jpg" width="850" height="1121" loading="lazy" alt="Windows版設定画面。6時まで今日、秒を表示、常に最前面、ログイン時に起動、デジタル時計のフォントと文字サイズ44 pt、既定に戻す。"></a><figcaption>画像は「6時まで今日」の設定例です。初期値は5時です。</figcaption></figure>
+        <div><p class="eyebrow">MAKE IT YOURS</p><h2 id="settings-title">あなたにとっての<br>「今日」を決める。</h2><p class="section-copy">夜の作業にも、配信の時間にも。<br>時計の見え方を変えて、いつものWindowsに。</p>
+          <ul class="setting-list">
+            <li>一日の境界：0〜12時から選択</li>
+            <li>秒表示：デジタル時計の秒とアナログ時計の秒針</li>
+            <li>フォント：Windowsに入っている字体から選択</li>
+            <li>文字サイズ：40〜100 pt、表示を見ながら調整</li>
+            <li>常に最前面・ログイン時に起動</li>
+          </ul>
+          <p class="section-copy">「既定に戻す」でフォントと文字サイズをリセット。変更したら「保存」を押してください。</p>
+        </div>
+      </div>
+    </section>
+    <section class="download-section wrap" id="download" aria-labelledby="download-title">
+      <p class="eyebrow">READY WHEN YOU ARE</p><h2 id="download-title">今夜から、25時で。</h2>
+      <p>64ビット（x64）Windows用 · MIT License</p>
+      <div class="download-actions"><a class="button primary" href="./downloads/NightOwlClock25_Windows.zip" download>Windows版をダウンロード ↓</a><a class="button secondary" href="./downloads/NightOwlClock25_Windows_Source.zip" download>ソースコードをダウンロード ↓</a></div>
+      <p>ソースコードも公開しています。利用・改変・再配布の条件は、同梱のLICENSE.txtをご覧ください。</p>
+      <div class="release-notice">
+        <h3>使いはじめるには</h3>
+        <ol class="install-steps"><li>ダウンロードしたZIPを、すべて展開します。</li><li>「NightOwlClock25_Windows」フォルダを使い続けたい場所に置きます。</li><li>フォルダ内の「NightOwlClock25.exe」をダブルクリックします。</li></ol>
+        <p>インストーラーでのセットアップは不要です。予定と設定は、通常 <code>%LOCALAPPDATA%\NightOwlClock25</code> に保存されます。</p>
+        <p>「ログイン時に起動」は、実行ファイルの置き場所を決めてから有効にしてください。</p>
+        <a href="./downloads/windows/README.txt">詳しい使い方を読む</a><a href="./downloads/windows/LICENSE.txt">MIT Licenseを読む</a>
+      </div>
+    </section>
+    <aside class="sister-page wrap" aria-label="Mac版のご案内"><div><p class="eyebrow">SAME NIGHT, ANOTHER DESKTOP</p><h2>Macをお使いの方はこちら。</h2><p>Macにも、今日の続きを。</p></div><a class="button secondary" href="./index.html">Mac版はこちら →</a></aside>
+  </main>
+  <footer class="wrap"><div class="footer-brand">夜ふかし時計25時<span>あなたの一日は、あなたのペースで。</span></div><div><a href="https://github.com/crownecoyah/yofukashi-clock-25">GitHub</a><a href="./downloads/windows/LICENSE.txt">MIT License</a><p>© 2026 黒猫屋倫彦</p></div></footer>
+</body>
+</html>
