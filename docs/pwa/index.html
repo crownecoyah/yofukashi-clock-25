@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090e1a">
+  <meta name="description" content="夜ふかし時計25時のブラウザ版。生活日付と25時記法で、時計も予定も今日の続きに。端末内保存・オフライン対応。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="夜ふかし25時">
+  <meta property="og:title" content="夜ふかし時計25時 ブラウザ版">
+  <meta property="og:description" content="0時を過ぎても、今日の続き。ブラウザで使える時計と予定管理。">
+  <meta property="og:image" content="https://crownecoyah.github.io/yofukashi-clock-25/og.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>夜ふかし時計25時 — ブラウザ版</title>
+</head>
+<body>
+  <a class="skip" href="#main">時計と予定へ移動</a>
+  <header class="app-header">
+    <div class="brand"><img src="./icons/icon-192.png" width="42" height="42" alt=""><div><h1>夜ふかし時計25時</h1><span>ブラウザ版 / PWA</span></div></div>
+    <a class="quiet-link" href="#settings">設定</a>
+  </header>
+  <noscript><p class="notice">時計と予定を使うにはJavaScriptを有効にしてください。</p></noscript>
+  <main id="main">
+    <p id="storage-warning" class="notice error" role="alert" hidden></p>
+    <p id="status" class="notice" role="status" hidden></p>
+    <div class="workspace">
+      <section class="clock-panel" aria-label="時計">
+        <div class="clock-top"><span class="eyebrow">TODAY, A LITTLE LONGER</span><span id="boundary-badge" class="badge">5時まで今日</span></div>
+        <svg id="analog" viewBox="0 0 280 280" aria-hidden="true">
+          <circle class="dial" cx="140" cy="140" r="130"/>
+          <g id="ticks"></g>
+          <g class="dial-labels"><text x="140" y="42">12</text><text x="243" y="146">3</text><text x="140" y="248">6</text><text x="37" y="146">9</text></g>
+          <text class="dial-brand" x="140" y="102">夜ふかし</text>
+          <line id="hour-hand" class="hand hour" x1="140" y1="146" x2="140" y2="72"/>
+          <line id="minute-hand" class="hand minute" x1="140" y1="150" x2="140" y2="44"/>
+          <line id="second-hand" class="hand second" x1="140" y1="162" x2="140" y2="38"/>
+          <circle cx="140" cy="140" r="5" fill="#f2c94c"/>
+        </svg>
+        <p class="small-label">生活日付</p>
+        <p id="logical-date" class="logical-date">時計を読み込み中…</p>
+        <p id="digital" class="digital" aria-label="生活時刻">--:--<span class="seconds">:--</span></p>
+        <p class="actual">実際の日時 <span id="actual-time">—</span></p>
+        <p id="zone" class="zone"></p>
+        <p class="clock-caption">0時を過ぎても、今日の続き。</p>
+      </section>
+      <section class="agenda" aria-labelledby="agenda-heading">
+        <div class="section-head"><div><p class="eyebrow">YOUR PLANS</p><h2 id="agenda-heading">予定</h2></div><button id="add" class="primary" disabled>＋ 予定を追加</button></div>
+        <div class="agenda-tools"><label for="filter">表示する予定</label><select id="filter"><option value="upcoming">これからの予定</option><option value="today">生活日付の今日</option><option value="all">すべての予定</option></select></div>
+        <p id="event-count" class="muted"></p>
+        <div id="events"><p class="empty">予定を読み込み中…</p></div>
+        <p class="hint">予定は生活日付順・開始時刻順です。ICSファイルを作成して、対応するカレンダーに追加できます。</p>
+      </section>
+    </div>
+    <section id="settings" class="settings" aria-labelledby="settings-heading">
+      <details><summary id="settings-heading">時計の設定</summary>
+        <div class="settings-grid">
+          <label for="boundary">何時まで今日にする？<select id="boundary"></select></label>
+          <label for="font">デジタル時計のフォント<select id="font"><option value="mono">等幅 — くっきり</option><option value="sans">ゴシック — すっきり</option><option value="serif">明朝 — ゆったり</option></select></label>
+          <label for="size">時計の文字サイズ<select id="size"><option value="normal">標準</option><option value="large">大きめ</option></select></label>
+          <label class="check" for="seconds"><input id="seconds" type="checkbox" checked>秒を表示する</label>
+        </div>
+        <p class="hint">境界時刻ちょうどから新しい生活日付になります。設定を変えても予定の実日時は変わりません。アナログ時計は通常の12時間表示です。</p>
+      </details>
+    </section>
+    <section class="help" aria-label="使い方とデータ">
+      <details id="install-help"><summary>アプリとして使う・インストール</summary><p>インストールせず、このページのままでも使えます。</p><button id="install" class="primary" hidden>アプリをインストール</button><p>iPhone / iPad：Safariでこのページを開き、共有メニューから「ホーム画面に追加」を選びます。MacのSafari：対応環境では「ファイル」から「Dockに追加」。Chrome / Edge：アドレスバーのインストールアイコン、またはブラウザのメニューをご確認ください。表示はOS・ブラウザにより異なります。</p></details>
+      <details><summary>保存・バックアップとプライバシー</summary><p>予定と設定はこの端末・ブラウザ内に保存され、別の端末には自動同期されません。入力内容をサーバーへ送信しません。</p><p>サイトデータを削除すると予定も失われます。プライベートブラウズでは保存が維持されない場合があります。大切な予定はICSとして書き出して保管してください。</p><div class="actions"><button id="export-all" disabled>全予定をICSで保存</button></div><p>ICSは自動同期ではありません。保存・共有したファイルを対応カレンダーで開いて追加してください。再取り込み時に重複するかどうかはカレンダー側によります。PWAの編集・削除は、追加先カレンダーへ反映されません。</p><p>一度オンラインで準備が完了すると、時計・設定・予定の編集・ICS作成をオフラインで使えます。ブラウザによりキャッシュや保存データが削除されることがあります。</p><p id="offline-state" role="status">オフラインの準備を確認中…</p><p>通知、アラーム、常に最前面、クラウド同期、外部カレンダーへの直接登録はありません。</p></details>
+    </section>
+  </main>
+  <footer><nav aria-label="各バージョン"><a href="../index.html">Mac版</a><a href="../windows.html">Windows版</a><span aria-current="page">ブラウザ版</span></nav><p>© 2026 黒猫屋倫彦 · <a href="./LICENSE.txt">MIT License</a></p></footer>
+  <dialog id="editor" aria-labelledby="editor-title">
+    <form id="event-form" novalidate>
+      <div class="section-head"><h2 id="editor-title">予定を追加</h2><button type="button" id="close-editor" aria-label="予定の編集を閉じる">閉じる</button></div>
+      <p class="hint">時刻は0〜35時で入力できます。例：1月1日の25:00は、実際の1月2日01:00です。</p>
+      <label for="title">タイトル（必須）<input id="title" name="title" maxlength="200" required autocomplete="off"></label>
+      <fieldset><legend>開始</legend><div class="date-fields"><label for="start-date">生活日付<input id="start-date" type="date" min="1000-01-01" max="9998-12-31" required></label><label for="start-time">時刻（0〜35時）<input id="start-time" inputmode="text" placeholder="25:00" maxlength="5" required></label></div></fieldset>
+      <fieldset><legend>終了</legend><div class="date-fields"><label for="end-date">生活日付<input id="end-date" type="date" min="1000-01-01" max="9998-12-31" required></label><label for="end-time">時刻（0〜35時）<input id="end-time" inputmode="text" placeholder="28:00" maxlength="5" required></label></div></fieldset>
+      <details class="dst"><summary>夏時間終了時の重複時刻</summary><p class="hint">同じ時刻が2回ある地域のみ使用します。通常は変更不要です。</p><label for="start-occurrence">開始<select id="start-occurrence"><option value="earlier">先に来る時刻（Mac版相当）</option><option value="later">後に来る時刻（Windows版相当）</option></select></label><label for="end-occurrence">終了<select id="end-occurrence"><option value="earlier">先に来る時刻</option><option value="later">後に来る時刻</option></select></label></details>
+      <p id="actual-preview" class="preview" aria-live="polite"></p>
+      <label for="note">メモ（任意）<textarea id="note" rows="3" maxlength="10000"></textarea></label>
+      <p id="form-error" class="error notice" role="alert" hidden></p>
+      <div class="actions"><button class="primary" id="save" type="submit">保存する</button><button type="button" id="cancel">キャンセル</button></div>
+    </form>
+  </dialog>
+  <dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">予定を削除しますか？</h2><p id="delete-name"></p><p class="hint">この操作は元に戻せません。追加先のカレンダーからは削除されません。</p><p id="delete-error" class="error" role="alert"></p><div class="actions"><button id="confirm-delete" class="danger">削除する</button><button id="cancel-delete">キャンセル</button></div></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

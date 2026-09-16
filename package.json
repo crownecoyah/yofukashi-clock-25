@@ -12,7 +12,10 @@
     "test": "node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
-    "build:pages": "npm run build && node scripts/export-pages.mjs"
+    "build:pages": "npm run build && node scripts/export-pages.mjs",
+    "test:pwa": "node scripts/test-pwa.mjs",
+    "build:pwa": "node scripts/export-pwa.mjs",
+    "dev:pwa": "node scripts/serve-pwa.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

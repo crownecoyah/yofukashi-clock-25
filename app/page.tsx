@@ -12,7 +12,7 @@ export default function Home() {
         <nav aria-label="メインナビゲーション"><a href="#features">できること</a><a href="#download">ダウンロード</a><a href={repository}>GitHub ↗</a></nav>
       </header>
       <div className="os-switch wrap" role="navigation" aria-label="OS版の切り替え">
-        <div className="os-tabs"><span aria-current="page">Mac版（表示中）</span><a href="./windows.html">Windows版</a></div>
+        <div className="os-tabs"><span aria-current="page">Mac版（表示中）</span><a href="./windows.html">Windows版</a><a href="./pwa/">ブラウザ版を今すぐ使う</a></div>
         <p><a href="./windows.html">Windows版はこちら →</a></p>
       </div>
       <main id="main">

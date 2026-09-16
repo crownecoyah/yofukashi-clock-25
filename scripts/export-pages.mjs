@@ -50,3 +50,6 @@ for (const name of ['main_window_win.jpg', 'setting_window_win.jpg']) {
   await copyFile(resolve(root, 'public/images', name), resolve(output, 'images', name));
 }
 await cp(resolve(root, 'public/downloads'), resolve(output, 'downloads'), { recursive: true });
+
+// Preserve the independent PWA in the normal GitHub Pages export.
+await import('./export-pwa.mjs');
