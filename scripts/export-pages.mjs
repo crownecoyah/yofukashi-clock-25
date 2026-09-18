@@ -46,7 +46,7 @@ await copyFile(resolve(root, 'public/theme.css'), resolve(output, 'theme.css'));
 for (const name of ['windows.html', 'windows.css', 'landing.css']) {
   await copyFile(resolve(root, 'public', name), resolve(output, name));
 }
-for (const name of ['main_window_win.jpg', 'setting_window_win.jpg']) {
+for (const name of ['main_window_win.jpg', 'setting_window_win.jpg', 'yotei_window_win.jpg']) {
   await copyFile(resolve(root, 'public/images', name), resolve(output, 'images', name));
 }
 await cp(resolve(root, 'public/downloads'), resolve(output, 'downloads'), { recursive: true });
