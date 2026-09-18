@@ -50,3 +50,14 @@
   .sister-page { padding:24px; }
   .sister-page .button { width:100%; }
 }
+
+/* Keep calendar prose in one readable column, independent of the screenshot. */
+.windows-page .calendar-copy {
+  max-width:760px;
+  margin:32px auto 0;
+  text-align:left;
+  white-space:normal;
+  word-break:normal;
+  overflow-wrap:normal;
+}
+.windows-page .calendar-copy p { text-wrap:pretty; }
